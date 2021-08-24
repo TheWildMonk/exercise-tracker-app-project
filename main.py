@@ -13,7 +13,7 @@ nx_post_data = nx_object.post_response()
 # For loop to loop through each exercise
 for key in range(0, len(nx_post_data.json()["exercises"])):
     # Create Sheety object and post the data to google sheets
-    sheety_object = Sheety(exercise=nx_post_data.json()["exercises"][key]["name"],
+    sheety_object = Sheety(exercise=nx_post_data.json()["exercises"][key]["name"].title(),
                            duration=nx_post_data.json()["exercises"][key]["duration_min"],
                            calories=nx_post_data.json()["exercises"][key]["nf_calories"])
     sheety_post_response = sheety_object.post_response()

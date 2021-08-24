@@ -17,7 +17,7 @@ class Sheety:
         self.duration = duration
         self.calories = calories
         self.today_date = datetime.today().date().strftime("%d/%m/%Y")
-        self.time_now = datetime.now().time().strftime("%H:%M:%S")
+        self.time_now = datetime.now().time().strftime("%X")
         self.API_KEY = os.getenv("SHEETY_API_KEY")
         self.ENDPOINT = f"https://api.sheety.co/{self.API_KEY}/workoutTracking/workouts"
         self.PARAMS = {
